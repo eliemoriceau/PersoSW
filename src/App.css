@@ -6,7 +6,7 @@
   box-shadow: 8px 8px 5px #E5E7EB;
 }
 
-.scale:hover {
+.hover-scale:hover {
   transform: scale(1.1);
 }
 
