@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Header, PersoList} from "./index";
 import {getAllPeople, getByUrl, getPeopleByName} from "../actions/requestAPI";
 import PersoDetails from "./PersoDetails/PersoDetails";
+import {Col, Row} from "react-bootstrap-v5";
 
 export default class StarWarsApp extends Component {
 
@@ -20,7 +21,6 @@ export default class StarWarsApp extends Component {
         if (!this.state.personages) {
             getAllPeople().then(res => {
                 this.updatePersonage(res.results)
-                this.updateSelectedPersonages(this.state.personages[0])
                 this.updateNext(res.next)
                 this.updatePrevious(res.previous)
             })
@@ -70,15 +70,24 @@ export default class StarWarsApp extends Component {
 
     render() {
         return (
-            <div className={'container-fluid'}>
-                <Header search={this.handleSearch}/>
-                <div className={'d-flex'}>
-                    {this.state.personages &&
-                    <PersoList next={this.state.next} previous={this.state.previous} changePage={this.changePage}
-                               peoples={this.state.personages} updateSelectedIndex={this.updateSelectedIndex}/>}
-                    {this.state.selectedPersonage && <PersoDetails personage={this.state.selectedPersonage}/>}
-                </div>
-            </div>
+            <Col className={''}>
+                <Row>
+                    <Header search={this.handleSearch}/>
+                </Row>
+                <Row>
+                    <Col>
+                        {this.state.personages &&
+                        <PersoList next={this.state.next} previous={this.state.previous} changePage={this.changePage}
+                                   peoples={this.state.personages} updateSelectedIndex={this.updateSelectedIndex}/>}
+                    </Col>
+                    {this.state.selectedPersonage && (
+                        <Col className={'d-flex justify-content-center'}>
+                            <PersoDetails personage={this.state.selectedPersonage}/>
+                        </Col>
+                    )}
+                </Row>
+
+            </Col>
         )
     }
 }

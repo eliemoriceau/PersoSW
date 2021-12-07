@@ -8,7 +8,7 @@ export default class SearchBar extends Component {
 
     render() {
         return (
-            <input name='query' className='flex-fill form-control mr-4 ' placeholder="Search..." onChange={event => {
+            <input name='query' className='flex-fill form-control border-warning mr-4 border-shadow-yellow' placeholder="Search..." onChange={event => {
                 this.searchAction(event.target.value)
             }}/>
         )
