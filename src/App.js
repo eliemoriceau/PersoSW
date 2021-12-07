@@ -7,7 +7,7 @@ function App() {
 
     return (
         <div className="App">
-           <StarWarsApp/>
+            <StarWarsApp/>
         </div>
     );
 }

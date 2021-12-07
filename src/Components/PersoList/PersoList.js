@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PersoCard from "../PersoCard/PersoCard";
+import {PersoCard} from "../index";
 import PropTypes from 'prop-types'
 import {Button} from "react-bootstrap-v5";
 
@@ -28,5 +28,4 @@ export default class PersoList extends Component{
 PersoList.prototypes = {
     peoples: PropTypes.object,
     className: PropTypes.string,
-
 }

@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {SearchBar} from "../index";
 import {Col, Row} from "react-bootstrap-v5";
+import PropTypes from 'prop-types'
 
-export default class App extends Component {
+export default class Header extends Component {
     render() {
         return (
             <header className="navbar navbar-expand-lg navbar-light bg-light px-3 container-fluid mb-4">
@@ -18,4 +19,8 @@ export default class App extends Component {
             </header>
         );
     }
+}
+
+Header.prototypes = {
+    search: PropTypes.func,
 }

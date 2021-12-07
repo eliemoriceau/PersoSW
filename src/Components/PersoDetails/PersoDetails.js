@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Col, Row} from "react-bootstrap-v5";
+import PropTypes from "prop-types";
 
 export default class PersoDetails extends Component {
     render() {
@@ -49,4 +50,8 @@ export default class PersoDetails extends Component {
             </div>
         )
     }
+}
+
+PersoDetails.prototypes = {
+    personages: PropTypes.object,
 }

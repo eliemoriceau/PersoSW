@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import {Header, PersoList} from "./index";
+import {Header, PersoDetails, PersoList} from "./index";
 import {getAllPeople, getByUrl, getPeopleByName} from "../actions/requestAPI";
-import PersoDetails from "./PersoDetails/PersoDetails";
 import {Col, Row} from "react-bootstrap-v5";
 
 export default class StarWarsApp extends Component {
@@ -58,10 +57,7 @@ export default class StarWarsApp extends Component {
     }
 
     handleSearch = (value) => {
-        console.log({value})
         getPeopleByName(value).then(res => {
-            console.log({res})
-
             this.updatePersonage(res.results)
             this.updateNext(res.next)
             this.updatePrevious(res.previous)
